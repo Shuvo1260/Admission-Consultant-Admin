@@ -24,6 +24,7 @@ export function searching(code) {
       document.getElementById('contact').value = doc.data().Contact;
       document.getElementById('email').value = doc.data().Email;
       document.getElementById('image').value = doc.data().ImageLink;
+      document.getElementById('latitude').value = doc.data().Latitude;
       document.getElementById('website').value = doc.data().Website;
       document.getElementById('circular').value = doc.data().Circular;
       document.getElementById('seat').value = doc.data().SeatPlan;
@@ -56,7 +57,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();//when we add data then web page don't refresh
   let rankValue;
   if(isNaN(form.rank.value) || form.rank.value == "") {
-    rankValue = 3000;
+    rankValue = 999;
   } else {
     rankValue = parseInt(form.rank.value);
   }
@@ -71,6 +72,7 @@ form.addEventListener('submit', (e) => {
     Contact: form.contact.value,
     Email: form.email.value,
     ImageLink: form.image.value,
+    Latitude: form.latitude.value,
     Website: form.website.value,
     Circular: form.circular.value,
     SeatPlan: form.seat.value

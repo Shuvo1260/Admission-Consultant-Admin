@@ -14,8 +14,8 @@ function renderList(doc) {
   var values = {
     Rank: doc.data().Rank, Code: doc.data().Code, Name: doc.data().Name, Division: doc.data().Division,
     District: doc.data().District, Location: doc.data().Location, Contact: doc.data().Contact,
-    Email: doc.data().Email, ImageLink: doc.data().ImageLink, Website: doc.data().Website,
-    Circular: doc.data().Circular, SeatPlan: doc.data().SeatPlan
+    Email: doc.data().Email, ImageLink: doc.data().ImageLink, Latitude: doc.data().Latitude,
+    Website: doc.data().Website, Circular: doc.data().Circular, SeatPlan: doc.data().SeatPlan
   };
 
   tableData.push(values);
@@ -63,7 +63,7 @@ function loadTableData(tableData) {
   let dataHtml = '';
   let index = 0;
   for (let data of tableData) {
-    dataHtml += '<tr><td><input class="list-value" value="' + data.Rank +
+    dataHtml += '<tr><td><input style="width: 40px;" class="list-value" value="' + data.Rank +
       '"></td><td><input class="list-value" value="' + data.Code +
       '"></td><td><input class="list-value" value="' + data.Name +
       '"></td><td><input class="list-value" value="' + data.Division +
@@ -72,10 +72,11 @@ function loadTableData(tableData) {
       '"></td><td><input class="list-value" value="' + data.Contact +
       '"></td><td><input class="list-value" value="' + data.Email +
       '"></td><td><input class="list-value" value="' + data.ImageLink +
+      '"></td><td><input class="list-value" value="' + data.Latitude +
       '"></td><td><input class="list-value" value="' + data.Website +
       '"></td><td><input class="list-value" value="' + data.Circular +
       '"></td><td><input class="list-value" value="' + data.SeatPlan +
-      '"></td><td><center><img id="removeId' + index + '" style="height: 25px; cursor:pointer;" src="../../image/delete.png"' +
+      '"></td><td><center><img id="removeId' + index + '" style="height: 25px ; cursor:pointer;" src="../../image/delete.png"' +
       '></center></td></tr>';
     index++;
   }
