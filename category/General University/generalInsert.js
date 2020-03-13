@@ -18,8 +18,14 @@ form.addEventListener('submit', (e) => {
     timer: 2000
   })
   e.preventDefault();//when we add data then web page don't refresh
+  let rankValue;
+  if(isNaN(form.rank.value) || form.rank.value == "") {
+    rankValue = 3000;
+  } else {
+    rankValue = parseInt(form.rank.value);
+  }
   db.collection('General').doc(form.code.value).set({
-    Rank: form.rank.value,
+    Rank: rankValue,
     Code: form.code.value,
     Name: form.name.value,
     Division: form.division.value,
